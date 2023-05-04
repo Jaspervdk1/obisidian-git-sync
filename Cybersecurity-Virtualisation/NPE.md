@@ -4,7 +4,7 @@
 ```
 VBoxManage createvm --name "Debian" --ostype "Debian_64" --register
 
-VBoxManage modifyvm "Debian" --memory 2048 --vram 128 --graphicscontroller vmsvga --nic1 bridged --bridgeadapter1 "Your Network Adapter Name"
+VBoxManage modifyvm "Debian" --memory 2048 --vram 128 --graphicscontroller vmsvga --nic1 nat --nic2 intnet
 
 VBoxManage modifyvm "Debian" 
 
@@ -19,7 +19,7 @@ VBoxManage storageattach "Debian" --storagectl "SATA Controller" --port 0 --devi
 ```
 VBoxManage createvm --name "Kali Linux" --ostype "Linux_64" --register
 
-VBoxManage modifyvm "Kali Linux" --memory 2048 --vram 128 --graphicscontroller vmsvga --nic1 bridged --bridgeadapter1 "Your Network Adapter Name" 
+VBoxManage modifyvm "Kali Linux" --memory 2048 --vram 128 --graphicscontroller vmsvga --nic1  nat --nic2 intnet
 
 VBoxManage storagectl "Kali Linux" --name "SATA Controller" --add sata --controller IntelAhci
 
